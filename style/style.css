@@ -1,0 +1,56 @@
+// Style file for 'A Cup for Joe'.
+
+@font-face {
+  font-family: courier;
+}
+
+nav .nav-tabs > li {
+  float: none;
+  display: inline-block;
+  margin: 0 auto;
+}
+nav .nav-tabs > li > a {
+  color: maroon;
+  background-color: sienna;
+  text-shadow: 1px black, 1px black, 1px black, 1px black;
+}
+
+span.fancy {
+  font-style: oblique;
+}
+
+span.dark {
+  font-weight: 900;
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: sienna;
+  color: maroon;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+#headline {
+  background: #FF9912; /*Cadmium Yellow*/
+  text-align: center;
+  height: 125px;
+}
+
+#links {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  background: maroon;
+}
+
+#pic-explanation {
+  text-align: center;
+  background: #FF9912;
+}
