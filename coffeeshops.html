@@ -17,26 +17,68 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="coffeetypes.html">Coffee Types</a></li>
         <li><a href="coffeeshops.html">Coffee Around the 'Burgh</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Can sort in alphabetical order later on? -->
-    <h1>Here is a list of coffee shops in Pittsburgh.</h1>
-    <ul>
-      <li>Adda Coffee and Tea</li>
-      <li>Allegheny Coffee and Tea Exchange</li>
-      <li>Espresso a Mano</li>
-      <li>Constellation Coffee</li>
-      <li>4121 MAIN</li>
-      <li>Big Dog Coffee</li>
-      <li>Crazy Mocha</li>
-      <li>CoffeeTree</li>      
-    </ul>
+    <div class="headline">
+      <h1>Here is a list of coffee shops in Pittsburgh.</h1>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="content-list">
+      <ul id="coffee-shop-list">
+        <li>Adda Coffee and Tea (Shadyside)</li>
+        <li>Allegheny Coffee and Tea Exchange (Strip District)</li>
+        <li>Espresso a Mano (Lawrenceville)</li>
+        <li>Constellation Coffee (Lawrenceville)</li>
+        <li>4121 MAIN (Bloomfield)</li>
+        <li>Big Dog Coffee (South Side)</li>
+        <li>Crazy Mocha (Various Neighborhoods)</li>
+        <li>CoffeeTree (Shadyside)</li>
+        <li>Blackforge Coffeehouse (Allentown)</li>
+      </ul>
+    </div>
+    <footer>
+    <br>
+      <p>&copy 2017 Joe Rogers, caffeine consumer extraordinaire</p>
+      <p>Pittsburgh, Pennsylvania</p>
+      <p>Please note that this is for a class project. All images are mine but information on coffee was found on the Internet.</p>
+    </footer>
+    <script src="js/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="style/js/bootstrap.js"></script>
     <script src="js/angular.min.js"></script>
+
+    <script>
+
+    /* This code will sort the list alphabetically so that I can add to the list as I wish. */
+
+    /*http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
+    http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children
+    SOURCE*/
+
+    /* Array of Coffee Shops. */
+    var coffee_shops = []
+    /* Retrieve data. */
+    $('#coffee-shop-list li').each(function(){
+      coffee_shops.push($(this).html());
+    });
+    coffee_shops.sort();
+    console.log(coffee_shops);
+    var counter = 0;
+    $('#coffee-shop-list li').each(function(){
+      console.log(coffee_shops[counter])
+      $(this).text(coffee_shops[counter]);
+      counter = counter + 1;
+    });
+
+    </script>
+
+
   </body>
 </html>

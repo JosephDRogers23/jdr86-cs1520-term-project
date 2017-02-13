@@ -4,13 +4,22 @@
   font-family: courier;
 }
 
-nav .nav-tabs > li {
+.nav-tabs > li {
   float: none;
   display: inline-block;
-  margin: 0 auto;
+}
+
+.nav-tabs {
+  text-align: center;
+  background: #FF9912;
+}
+
+
+nav .nav-tabs a:hover {
+  background: maroon;
 }
 nav .nav-tabs > li > a {
-  color: maroon;
+  color: white;
   background-color: sienna;
   text-shadow: 1px black, 1px black, 1px black, 1px black;
 }
@@ -33,31 +42,52 @@ footer {
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2 {
   margin: 0;
 }
 
-#headline {
+.headline {
   background: #FF9912; /*Cadmium Yellow*/
   text-align: center;
   height: 125px;
 }
 
-#links {
-  display: inline-block;
-  margin-right: auto;
-  margin-left: auto;
-  background: maroon;
-}
-
-#pic-explanation {
+.content {
   text-align: center;
   background: #FF9912;
 }
 
+.content-filler {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  background: maroon;
+}
+
+.content-list {
+  margin-left: auto;
+  margin-right: auto;
+  background: maroon;
+  color: white;
+}
+
+#coffee-shop-list li {
+  text-align: center;
+  list-style-type: none;
+}
+
+.coffee-types {
+  background: maroon;
+  color: white;
+}
+
 .coffee-types > img {
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  margin: auto;
+  display: block;
   height: 250px;
   width: 250px;
 }
