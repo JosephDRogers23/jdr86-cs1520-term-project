@@ -31,7 +31,7 @@
       <br>
     </div>
     <div class="content-list">
-      <ul id="coffee-shop-list">
+      <ul id="coffeeShopList">
         <li>Adda Coffee and Tea (Shadyside)</li>
         <li>Allegheny Coffee and Tea Exchange (Strip District)</li>
         <li>Espresso a Mano (Lawrenceville)</li>
@@ -58,24 +58,31 @@
 
     /* This code will sort the list alphabetically so that I can add to the list as I wish. */
 
-    /*http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
-    http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children
-    SOURCE*/
+    /*
+    SOURCES
 
-    /* Array of Coffee Shops. */
-    var coffee_shops = []
-    /* Retrieve data. */
-    $('#coffee-shop-list li').each(function(){
-      coffee_shops.push($(this).html());
+    http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
+    http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children
+
+    */
+
+    $(document).ready(function(){
+      /* Array of Coffee Shops. */
+      var coffee_shops = []
+      /* Retrieve data. */
+      $('#coffeeShopList li').each(function(){
+        coffee_shops.push($(this).html());
+      });
+      coffee_shops.sort();
+      console.log(coffee_shops);
+      var counter = 0;
+      $('#coffeeShopList li').each(function(){
+        console.log(coffee_shops[counter])
+        $(this).text(coffee_shops[counter]);
+        counter = counter + 1;
+      });
     });
-    coffee_shops.sort();
-    console.log(coffee_shops);
-    var counter = 0;
-    $('#coffee-shop-list li').each(function(){
-      console.log(coffee_shops[counter])
-      $(this).text(coffee_shops[counter]);
-      counter = counter + 1;
-    });
+
 
     </script>
 
