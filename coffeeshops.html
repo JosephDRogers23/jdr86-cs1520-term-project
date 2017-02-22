@@ -52,27 +52,29 @@
     <script src="style/js/bootstrap.js"></script>
     <script src="js/angular.min.js"></script>
     <script>
-    /* This code will sort the list alphabetically so that I can add to the list as I wish. */
-    /* SOURCES:
-    http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
-    http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children*/
+      /* This code will sort the list alphabetically so that I can add to the list as I wish. */
+      /* SOURCES:
+      http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
+      http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children*/
 
-    $(document).ready(function(){
-      /* Array of Coffee Shops. */
-      var coffee_shops = []
-      /* Retrieve data. */
-      $('#coffeeShopList li').each(function(){
-        coffee_shops.push($(this).html());
+      $(document).ready(function(){
+        /* Array of Coffee Shops. */
+        var coffee_shops = []
+        /* Retrieve data. */
+        var shop_elements = $('#coffeeShopList li');
+        shop_elements.each(function(){
+          coffee_shops.push($(this).html());
+        });
+        coffee_shops.sort();
+        console.log(coffee_shops);
+        var counter = 0;
+        shop_elements.each(function(){
+          console.log(coffee_shops[counter])
+          $(this).text(coffee_shops[counter]);
+          /* I did not store 'this' in a variable because it refers to a unique object each time. */
+          counter = counter + 1;
+        });
       });
-      coffee_shops.sort();
-      console.log(coffee_shops);
-      var counter = 0;
-      $('#coffeeShopList li').each(function(){
-        console.log(coffee_shops[counter])
-        $(this).text(coffee_shops[counter]);
-        counter = counter + 1;
-      });
-    });
     </script>
   </body>
 </html>
