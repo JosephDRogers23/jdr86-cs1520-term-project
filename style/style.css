@@ -4,34 +4,6 @@
   font-family: courier;
 }
 
-.nav-tabs > li {
-  float: none;
-  display: inline-block;
-}
-
-.nav-tabs {
-  text-align: center;
-  background: #FF9912;
-}
-
-
-nav .nav-tabs a:hover {
-  background: maroon;
-}
-nav .nav-tabs > li > a {
-  color: white;
-  background-color: sienna;
-  text-shadow: 1px black, 1px black, 1px black, 1px black;
-}
-
-span.fancy {
-  font-style: oblique;
-}
-
-span.dark {
-  font-weight: 900;
-}
-
 footer {
   position: fixed;
   left: 0px;
@@ -50,8 +22,35 @@ h2 {
   margin: 0;
 }
 
+nav .nav-tabs a:hover {
+  background: maroon;
+}
+nav .nav-tabs > li > a {
+  color: white;
+  background-color: sienna;
+  text-shadow: 1px black, 1px black, 1px black, 1px black;
+}
+
+.nav-tabs {
+  text-align: center;
+  background: #FF9912;
+}
+
+.nav-tabs > li {
+  float: none;
+  display: inline-block;
+}
+
+span.fancy {
+  font-style: oblique;
+}
+
+span.dark {
+  font-weight: 900;
+}
+
 .headline {
-  background: #FF9912; /*Cadmium Yellow*/
+  background: #FF9912; /* Cadmium Yellow */
   text-align: center;
   height: 125px;
 }
@@ -75,11 +74,6 @@ h2 {
   color: white;
 }
 
-#coffeeShopList li {
-  text-align: center;
-  list-style-type: none;
-}
-
 .coffee-types {
   background: maroon;
   color: white;
@@ -90,4 +84,9 @@ h2 {
   display: block;
   height: 250px;
   width: 250px;
+}
+
+#coffeeShopList li {
+  text-align: center;
+  list-style-type: none;
 }
