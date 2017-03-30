@@ -33,7 +33,27 @@
       <br>
     </div>
     <?php
-      echo "I'm here";
+    if (isset($_COOKIE["suggestions"])) {
+      $suggestions = unserialize($_COOKIE["suggestions"]);
+    }
+    else {
+      $suggestions = [];
+    }
+
+    $set = false;
+    if($_POST) {
+      $name = $_POST["shopName"];
+      $neighborhood = $_POST["neighborhood"];
+      $rating = "";
+      $newEntry = $name . " (" . $neighborhood . ") ";
+      if(isset($_POST["rad"])) {
+        $rating = $_POST["rad"]; //Will retrieve selected value
+        $newEntry = $newEntry . "Rating: " . $rating;
+      }
+      array_push($suggestions, $newEntry);
+      setcookie('suggestions', serialize($suggestions));
+      $set = true;
+    }
     ?>
     <div class="content-list">
       <ul id="coffeeShopList">
@@ -48,26 +68,27 @@
         <li>Blackforge Coffeehouse (Allentown)</li>
         <li>Lili Cafe (Polish Hill)</li>
         <?php
-          #if(isset($_POST["submit"])) {
-          if($_POST) {
-            $name = $_POST["shopName"];
-            $neighborhood = $_POST["neighborhood"];
-            $rating = "";
-            $newEntry = $name . " (" . $neighborhood . ") ";
-            if(isset($_POST["rad"])) {
-              $rating = $_POST["rad"]; //Will retrieve selected value
-              $newEntry = $newEntry . "Rating: " . $rating;
+          # Help for this code comes from: https://stackoverflow.com/questions/9032007/arrays-in-cookies-php .
+
+          if(isset($_COOKIE["suggestions"])) {
+            $sugg = unserialize($_COOKIE["suggestions"]);
+            $counter = 0;
+            foreach ($sugg as $s) {
+              echo "<li>" . $s . "</li>";
+              $counter = $counter + 1;
+              if($counter==3) {
+                break;
+              }
             }
-            echo "<li>" . $newEntry . "</li>";
           }
          ?>
       </ul>
     </div>
 
   <!--  <div class="headline"> -->
-      <h3>Suggest a shop!</h3>
+      <h3>Suggest a shop! (Entries with ratings have been suggested by the community.)</h3>
 
-    <form method="POST" action="">
+    <form method="POST" action="" id="suggestionBox">
       <h5>Name</h5>
       <input type="text" name="shopName">
       <h5>Neighborhood</h5>
@@ -82,6 +103,7 @@
       <input type="submit" value="Submit!">
       <!-- Should thank user and display it in coffeeShopList above in specified format. -->
     </form>
+
     <footer>
     <br>
       <p>&copy 2017 Joe Rogers, caffeine consumer extraordinaire</p>
@@ -93,11 +115,39 @@
     <script src="style/js/bootstrap.js"></script>
     <script src="js/angular.min.js"></script>
     <script>
+
+      /* I received help on this AJAX request from this URL: https://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php .*/
+      var request;
+      $("form").submit(function(event){
+        event.preventDefault();
+        if(request) {
+          request.abort();
+        }
+        var $form = $(this);
+        var $inputs = $form.find("input");
+        var serializedData = $form.serialize();
+        $inputs.prop("disabled", true);
+        request = $.ajax({
+          url: "",
+          type: "post",
+          data: serializedData
+        });
+        request.done(function(response, textStatus){
+          console.log("Success!");
+          var message = document.createElement("h4");
+          var text = document.createTextNode("Thanks for your suggestion! Check back later. Up to three suggestions will be entered.");
+          message.appendChild(text);
+          document.getElementById("suggestionBox").appendChild(message);
+        });
+        request.fail(function (jqXHR, textStatus, errorThrown){
+          console.error("Error: " + textStatus, errorThrown);
+        });
+      });
+
       /* This code will sort the list alphabetically so that I can add to the list as I wish. */
       /* SOURCES:
       http://stackoverflow.com/questions/12554246/how-to-list-out-all-children-of-ul
       http://stackoverflow.com/questions/3546659/how-can-i-count-the-number-of-children*/
-
       $(document).ready(function(){
         /* Array of Coffee Shops. */
         var coffee_shops = []
