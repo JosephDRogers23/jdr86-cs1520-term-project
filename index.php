@@ -20,10 +20,10 @@
   <body>
     <nav>
       <ul class="nav nav-tabs">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coffeetypes.html">Coffee Types</a></li>
-        <li><a href="coffeeshops.html">Coffee Around the 'Burgh</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="coffeetypes.php">Coffee Types</a></li>
+        <li><a href="coffeeshops.php">Coffee Around the 'Burgh</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
 

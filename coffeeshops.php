@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,20 +18,23 @@
   <body>
     <nav>
       <ul class="nav nav-tabs">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="coffeetypes.html">Coffee Types</a></li>
-        <li><a href="coffeeshops.html">Coffee Around the 'Burgh</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="coffeetypes.php">Coffee Types</a></li>
+        <li><a href="coffeeshops.php">Coffee Around the 'Burgh</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Can sort in alphabetical order later on? -->
-    <div class="headline">
+    <div class="headline" style="height: 40px">
       <h1>Here is a list of coffee shops in Pittsburgh.</h1>
       <br>
       <br>
       <br>
     </div>
+    <?php
+      echo "I'm here";
+    ?>
     <div class="content-list">
       <ul id="coffeeShopList">
         <li>Adda Coffee and Tea (Shadyside)</li>
@@ -39,8 +46,42 @@
         <li>Crazy Mocha (Various Neighborhoods)</li>
         <li>CoffeeTree (Shadyside)</li>
         <li>Blackforge Coffeehouse (Allentown)</li>
+        <li>Lili Cafe (Polish Hill)</li>
+        <?php
+          #if(isset($_POST["submit"])) {
+          if($_POST) {
+            $name = $_POST["shopName"];
+            $neighborhood = $_POST["neighborhood"];
+            $rating = "";
+            $newEntry = $name . " (" . $neighborhood . ") ";
+            if(isset($_POST["rad"])) {
+              $rating = $_POST["rad"]; //Will retrieve selected value
+              $newEntry = $newEntry . "Rating: " . $rating;
+            }
+            echo "<li>" . $newEntry . "</li>";
+          }
+         ?>
       </ul>
     </div>
+
+  <!--  <div class="headline"> -->
+      <h3>Suggest a shop!</h3>
+
+    <form method="POST" action="">
+      <h5>Name</h5>
+      <input type="text" name="shopName">
+      <h5>Neighborhood</h5>
+      <input type="text" name="neighborhood">
+      <h5>Rating</h5>
+
+      <input type="radio" name="rad" value="1">1
+      <input type="radio" name="rad" value="2">2
+      <input type="radio" name="rad" value="3" checked>3
+      <input type="radio" name="rad" value="4">4
+      <input type="radio" name="rad" value="5">5
+      <input type="submit" value="Submit!">
+      <!-- Should thank user and display it in coffeeShopList above in specified format. -->
+    </form>
     <footer>
     <br>
       <p>&copy 2017 Joe Rogers, caffeine consumer extraordinaire</p>
