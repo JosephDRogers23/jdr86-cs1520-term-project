@@ -27,7 +27,7 @@
       </ul>
     </nav>
 
-    <div class="headline">
+    <div class="headline" style="height: 125px">
       <h1>A Cup For Joe</h1>
       <h3>a place to learn, discover, and consume</h3>
     </div>
@@ -37,10 +37,10 @@
     </div>
 
     <div class="content-filler">
-      <a href="coffeetypes.html">
+      <a href="coffeetypes.php">
         <img src="images/latte_art.jpg" alt="Latte Art" height="500px" width="40%" style="float:left;">
       </a>
-      <a href="coffeeshops.html">
+      <a href="coffeeshops.php">
         <img src="images/latte.jpg" alt="Latte" height="500px" width="40%" style="float:right;">
       </a>
     </div>
