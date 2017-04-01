@@ -73,6 +73,23 @@ span.dark {
   color: white;
 }
 
+.content-list-theme-left {
+  display: inline-block;
+  float:left;
+  height:600px;
+  width:50%;
+  background-color:maroon;
+  color:white;
+}
+
+.content-list-theme-right {
+  display: inline-block;
+  float:right;
+  height: 600px;
+  width:50%;
+  background-color: maroon;
+}
+
 .coffee-types {
   background: maroon;
   color: white;

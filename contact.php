@@ -1,3 +1,25 @@
+<?php
+  if($_POST) {
+    echo "Here";
+    $db = new mysqli("localhost");
+    if($db->connect_error) {
+      echo("Connection failed: " . $db->connect_error);
+    }
+    mysqli_select_db($db, "contactinfo");
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $zip = $_POST['zip'];
+    $gender = $_POST['gender'];
+    $quer = "INSERT INTO Information VALUES (\"" . $name . "\", \"" . $email . "\", \"" . $street . "\", \"" . $city . "\", " . $zip . ", \"" . $gender . "\")";
+    echo $quer . "<br>";
+    $result = $db->query($quer);
+    echo $result;
+    mysqli_close($db);
+  }
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,36 +48,36 @@
         <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
-
-    <div class="content-list">
-      <h1>My Contact Information</h1>
-      <br>
-      <br>
-      <br>
-      <h4><a href="mailto:jdr86@pitt.edu">Joseph Rogers</a></h4>
-      <h4>University of Pittsburgh</h4>
-      <h4><a href="http://josephdrogers23.github.io" target="_blank">Personal Website</a></h4>
+    <div style="width:100%; padding:0;margin:0;">
+      <div class="content-list-theme-left">
+        <h1>My Contact Information</h1>
+        <br>
+        <br>
+        <br>
+        <h4><a href="mailto:jdr86@pitt.edu">Joseph Rogers</a></h4>
+        <h4>University of Pittsburgh</h4>
+        <h4><a href="http://josephdrogers23.github.io" target="_blank">Personal Website</a></h4>
+      </div>
+      <div class="content-list-theme-right">
+        <form action="" method="POST">
+          <h3>Name</h3>
+          <input type="text" name="name">
+          <h3>Email</h3>
+          <input type="text" name="email">
+          <h3>Street</h3>
+          <input type="text" name="street">
+          <h3>City</h3>
+          <input type="text" name="city">
+          <h3>Zip Code</h3>
+          <input type="text" name="zip">
+          <h3>Gender</h3>
+          <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+          <input type="radio" name="gender" value="Other" checked>Other
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
-
-    <form action="" method="POST">
-      <h3>Name</h3>
-      <input type="text" name="name">
-      <h3>Email</h3>
-      <input type="text" name="name">
-      <h3>Street</h3>
-      <input type="text" name="street">
-      <h3>City</h3>
-      <input type="text" name="city">
-      <h3>Zip Code</h3>
-      <input type="text" name="zip">
-      <h3>Gender</h3>
-      <input type="radio" name="Male" value="Male">Male
-      <input type="radio" name="Female" value="Female">Female
-      <input type="radio" name="Other" value="Other" checked>Other
-      <input type="submit" value="Submit">
-    </form>
-
-
 
     <footer>
       <br>
