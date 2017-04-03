@@ -88,6 +88,11 @@ span.dark {
   height: 600px;
   width:50%;
   background-color: maroon;
+  color: white;
+}
+
+.conteent-list-theme-right > form > input {
+  color: black;
 }
 
 .coffee-types {

@@ -1,7 +1,7 @@
 <?php
   if($_POST) {
     echo "Here";
-    $db = new mysqli("localhost");
+    $db = new mysqli("localhost", "root", "", "contactinfo");
     if($db->connect_error) {
       echo("Connection failed: " . $db->connect_error);
     }
