@@ -1,6 +1,5 @@
 <?php
   if($_POST) {
-    echo "Here";
     $db = new mysqli("localhost", "root", "", "contactinfo");
     if($db->connect_error) {
       echo("Connection failed: " . $db->connect_error);
@@ -13,9 +12,7 @@
     $zip = $_POST['zip'];
     $gender = $_POST['gender'];
     $quer = "INSERT INTO Information VALUES (\"" . $name . "\", \"" . $email . "\", \"" . $street . "\", \"" . $city . "\", " . $zip . ", \"" . $gender . "\")";
-    echo $quer . "<br>";
     $result = $db->query($quer);
-    echo $result;
     mysqli_close($db);
   }
  ?>
