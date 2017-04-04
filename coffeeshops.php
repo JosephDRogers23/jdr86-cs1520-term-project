@@ -1,13 +1,10 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Pittsburgh Coffee Shops</title>
 
@@ -27,7 +24,7 @@
 
     <!-- Can sort in alphabetical order later on? -->
     <div class="headline" style="height: 40px">
-      <h1>Here is a list of coffee shops in Pittsburgh.</h1>
+      <h1>Places to find your inspiration</h1>
       <br>
       <br>
       <br>

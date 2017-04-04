@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="style/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,8 +33,8 @@
       <h3>a place to learn, discover, and consume</h3>
     </div>
 
-    <div class="content">
-      <h2>Click on the left latte for Coffee Types, and on the right latte for Coffee Shops!</h2>
+    <div class="content headline">
+      <h2>Click on the left latte for Coffee Types, and on the right latte for Coffee Shops</h2>
     </div>
 
     <div class="content-filler">

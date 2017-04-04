@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap -->
     <link href="style/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +25,7 @@
     </nav>
 
     <div ng-repeat="obj in types" class="coffee-types">
-      <h1>{{ obj.title }}</h1>
+      <h1 class="headline">{{ obj.title }}</h1>
       <img ng-src="{{ obj.imageURL }}" alt="{{ obj.alt }}">
       <p>{{ obj.description }}</p>
       <p>Source found <a ng-href="{{ obj.source }}" target="_blank">here.</a></p>
